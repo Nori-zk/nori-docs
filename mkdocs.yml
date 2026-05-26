@@ -27,7 +27,11 @@ theme:
 markdown_extensions:
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - attr_list
@@ -62,8 +66,6 @@ nav:
       - Proof Conversion: components/proof-conversion/index.md
   - Audit:
       - Overview: audit/index.md
-  - Decisions:
-      - Overview: decisions/index.md
   - Operations:
       - Overview: operations/index.md
   - Roadmap: roadmap.md

@@ -21,7 +21,6 @@ those proofs into a form Mina's ZK-native L1 can verify.
   flows from Ethereum to Mina.
 - [Components](components/index.md) — per-component landing pages.
 - [Audit](audit/index.md) — external audit scope and status.
-- [Decisions](decisions/index.md) — published architecture decision records.
 - [Operations](operations/index.md) — building, running, and deploying the
   bridge.
 - [Roadmap](roadmap.md) — current development phase.
