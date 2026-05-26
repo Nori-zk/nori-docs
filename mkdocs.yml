@@ -1,0 +1,69 @@
+site_name: Nori-zk
+site_description: An Ethereum to Mina zero-knowledge bridge.
+site_url: https://nori-zk.github.io/nori-docs/
+repo_url: https://github.com/Nori-zk/nori-docs
+repo_name: Nori-zk/nori-docs
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+    - toc.follow
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Nori-zk
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Concepts:
+      - Overview: concepts/index.md
+  - Architecture:
+      - Overview: architecture/index.md
+  - Components:
+      - Overview: components/index.md
+      - Bridge Head: components/bridge-head/index.md
+      - Bridge SDK: components/bridge-sdk/index.md
+      - Proof Conversion: components/proof-conversion/index.md
+  - Audit:
+      - Overview: audit/index.md
+  - Decisions:
+      - Overview: decisions/index.md
+  - Operations:
+      - Overview: operations/index.md
+  - Roadmap: roadmap.md
