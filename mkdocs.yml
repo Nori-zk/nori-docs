@@ -55,10 +55,12 @@ extra_css:
 
 nav:
   - Home: index.md
+  - Vision: vision/index.md
   - Concepts:
       - Overview: concepts/index.md
   - Architecture:
       - Overview: architecture/index.md
+      - Trust anchors: architecture/trust-anchors.md
   - Components:
       - Overview: components/index.md
       - Bridge Head: components/bridge-head/index.md

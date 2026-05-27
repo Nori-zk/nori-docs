@@ -1,0 +1,44 @@
+# Nori-zk
+
+> An Ethereum→Mina zero-knowledge bridge. An SP1-based Helios light client
+> produces Ethereum consensus and storage proofs; those proofs are converted
+> to Mina-shaped o1js proofs and verified on-chain on Mina, which mints nETH
+> only when the Ethereum state actually says it should.
+
+This site documents the bridge's architecture, components, trust model, and
+operations. The project is in pre-audit hardening as of the documentation's
+publication. Component sections describe the three in-scope repos
+(`nori-bridge-head`, `proof-conversion`, `nori-bridge-sdk`); cross-cutting
+sections (Architecture, Trust anchors, Concepts) explain how they fit
+together.
+
+## Overview
+
+- [Home](https://nori-zk.github.io/nori-docs/): One-screen orientation to what Nori-zk is and where to read next.
+- [Vision](https://nori-zk.github.io/nori-docs/vision/): Product framing — why a ZK Ethereum→Mina bridge exists and what problem it solves.
+- [Roadmap](https://nori-zk.github.io/nori-docs/roadmap/): Current phase (pre-audit hardening) and what's next at a high level.
+
+## Architecture
+
+- [Architecture overview](https://nori-zk.github.io/nori-docs/architecture/): Cross-component story — how Ethereum state becomes a Mina-verifiable proof, with Mermaid diagrams of the data flow.
+- [Trust anchors](https://nori-zk.github.io/nori-docs/architecture/trust-anchors/): The three values (pi0, vkData, PO2) that pin the chain of trust between Ethereum and Mina — where each originates, how it flows, and what enforces it.
+
+## Components
+
+- [Components overview](https://nori-zk.github.io/nori-docs/components/): Index of the three in-scope components with language, role, and one-line descriptions.
+- [bridge-head](https://nori-zk.github.io/nori-docs/components/bridge-head/): Rust / SP1. Helios light client inside the SP1 zkVM. Produces Ethereum consensus + execution-layer storage proofs that downstream components convert and verify on Mina.
+- [proof-conversion](https://nori-zk.github.io/nori-docs/components/proof-conversion/): TypeScript + Rust. Takes PLONK / Groth16 proofs out of SP1 and converts them into o1js-shaped proofs that Mina's PLONK verifier can consume.
+- [bridge-sdk](https://nori-zk.github.io/nori-docs/components/bridge-sdk/): TypeScript monorepo. The Mina-side counterpart — Solidity contracts (ETH side), o1js zkApp (Mina side), client libraries, workers, and cache server.
+
+## Concepts
+
+- [Concepts](https://nori-zk.github.io/nori-docs/concepts/): Cryptographic and protocol primitives — Ethereum light clients (and Helios), the SP1 zkVM, ZK proof systems (PLONK, Groth16), Mina's recursive-PLONK model, and how bridges in general use ZK to avoid trusted third parties.
+
+## Audit and operations
+
+- [Audit](https://nori-zk.github.io/nori-docs/audit/): Audit scope (the three in-scope components named above), pre-disclosure posture, and what is and isn't published here yet.
+- [Operations](https://nori-zk.github.io/nori-docs/operations/): Build, run, and deploy each component; day-to-day procedures.
+
+## Optional
+
+- [GitHub: Nori-zk org](https://github.com/Nori-zk): Source repositories for the bridge components and this documentation site.
